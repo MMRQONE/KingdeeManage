@@ -25,9 +25,11 @@ public class ViewController {
     public Object View(@RequestBody String paramStr) throws Exception {
         JSONObject paramJson = JSON.parseObject(paramStr);
         String formid = (String)paramJson.get("fromid");
+
         String data = paramJson.get("data").toString();
 
         Object resultStr = this.kingeeService.view(formid, data);
+
         return resultStr;
     }
 }
